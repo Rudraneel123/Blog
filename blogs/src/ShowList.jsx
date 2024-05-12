@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Button, Card } from "@mui/material";
+import { BrowserRouter as Router, useNavigate } from "react-router-dom";
+
 
 function ShowList() {
   const [showBlog, setShowBlog] = useState(false);
@@ -11,6 +13,8 @@ function ShowList() {
       .then((data) => setBlogs(data))
       .catch((error) => console.error("Error:", error));
   };
+  
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -24,7 +28,10 @@ function ShowList() {
               </div>
             ))}
         </Card>
-        <Button
+      </Card>
+      <div>
+        <div style={{gap:'20px',display:'flex',flexDirection:'column'}}>
+      <Button
           onClick={() => {
             handleShowBlog();
             setShowBlog(!showBlog);
@@ -32,7 +39,11 @@ function ShowList() {
         >
           Show Blogs
         </Button>
-      </Card>
+        <Button onClick={() => navigate(-1)}>
+          Back
+        </Button>
+        </div>
+      </div>
     </div>
   );
 }
