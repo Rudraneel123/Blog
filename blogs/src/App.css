@@ -1,0 +1,23 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.div-centre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+.div-inner{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  
+}
+.save-button{
+  display: flex !important;
+  justify-content: end !important;
+  padding: 15px 0px 0px 0px !important;
+}
